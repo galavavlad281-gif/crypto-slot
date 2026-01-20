@@ -43,6 +43,273 @@
             font-size: 0.9em;
         }
 
+        .login-screen {
+            background: #1a1a2e;
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .login-screen h2 {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-input {
+            padding: 12px;
+            border: 2px solid #2d2d44;
+            border-radius: 8px;
+            background: #2d2d44;
+            color: white;
+            font-size: 1em;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .login-btn {
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.9em;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .game-screen {
+            display: none;
+        }
+
+        .user-info {
+            background: #1a1a2e;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-details {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-role {
+            font-weight: bold;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .user-role.admin {
+            background: #ef4444;
+        }
+
+        .user-role.user {
+            background: #10b981;
+        }
+
+        .user-name {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .logout-btn {
+            padding: 8px 20px;
+            background: #2d2d44;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .logout-btn:hover {
+            background: #3d3d54;
+        }
+
+        .admin-panel {
+            background: #1a1a2e;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 2px solid #ef4444;
+        }
+
+        .admin-panel h3 {
+            margin-bottom: 20px;
+            color: #ef4444;
+        }
+
+        .admin-section {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .admin-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .admin-section h4 {
+            font-size: 1em;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .admin-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .admin-input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #2d2d44;
+            border-radius: 8px;
+            background: #2d2d44;
+            color: white;
+            font-size: 1em;
+        }
+
+        .admin-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .admin-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .admin-btn.add {
+            background: #10b981;
+            color: white;
+        }
+
+        .admin-btn.reset {
+            background: #ef4444;
+            color: white;
+        }
+
+        .admin-btn.create {
+            background: #667eea;
+            color: white;
+        }
+
+        .admin-btn:hover {
+            opacity: 0.8;
+        }
+
+        .user-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .user-item {
+            background: #2d2d44;
+            border-radius: 8px;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-item-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .user-item-name {
+            font-weight: bold;
+        }
+
+        .user-item-password {
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .user-item-balance {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .delete-btn {
+            padding: 8px 15px;
+            background: #ef4444;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .delete-btn:hover {
+            opacity: 0.8;
+        }
+
+        .user-select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #2d2d44;
+            border-radius: 8px;
+            background: #2d2d44;
+            color: white;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .user-select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
         .wallet {
             background: linear-gradient(135deg, #667eea, #764ba2);
             border-radius: 15px;
@@ -122,6 +389,10 @@
             color: rgba(255, 255, 255, 0.6);
         }
 
+        .message.error {
+            color: #ef4444;
+        }
+
         .bet-controls {
             margin-bottom: 25px;
         }
@@ -187,7 +458,7 @@
 
         .stats {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 15px;
             margin-bottom: 25px;
         }
@@ -207,6 +478,10 @@
             border-color: rgba(239, 68, 68, 0.3);
         }
 
+        .stat-card.deposit {
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
         .stat-label {
             font-size: 0.85em;
             color: rgba(255, 255, 255, 0.6);
@@ -224,6 +499,10 @@
 
         .stat-value.loss {
             color: #ef4444;
+        }
+
+        .stat-value.deposit {
+            color: #ffd700;
         }
 
         .history {
@@ -252,23 +531,6 @@
             text-align: center;
             color: rgba(255, 255, 255, 0.4);
             padding: 20px 0;
-        }
-
-        .reset-button {
-            width: 100%;
-            padding: 15px;
-            background: #2d2d44;
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-size: 1em;
-            cursor: pointer;
-            transition: all 0.2s;
-            margin-bottom: 20px;
-        }
-
-        .reset-button:hover {
-            background: #3d3d54;
         }
 
         .paytable {
@@ -311,6 +573,16 @@
             text-align: center;
             font-size: 0.75em;
             color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .paytable-warning {
+            text-align: center;
+            font-size: 0.8em;
+            color: #ef4444;
+            padding: 10px;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 8px;
         }
     </style>
 </head>
@@ -321,90 +593,149 @@
             <p>Симулятор • Без реальных денег</p>
         </div>
 
-        <div class="wallet">
-            <div class="wallet-address" id="walletAddress"></div>
-            <div class="balance">
-                <span id="balance">0</span> USDT
-                <div class="balance-label">Виртуальный баланс</div>
-            </div>
+        <div class="login-screen" id="loginScreen">
+            <h2>🔐 Вход в систему</h2>
+            <form class="login-form" onsubmit="login(event)">
+                <div class="form-group">
+                    <label>Логин</label>
+                    <input type="text" class="form-input" id="loginUsername" required>
+                </div>
+                <div class="form-group">
+                    <label>Пароль</label>
+                    <input type="password" class="form-input" id="loginPassword" required>
+                </div>
+                <button type="submit" class="login-btn">Войти</button>
+                <div class="error-message" id="loginError"></div>
+            </form>
         </div>
 
-        <div class="slot-machine">
-            <div class="slots">
-                <div class="slot" id="slot1">🍋</div>
-                <div class="slot" id="slot2">🍒</div>
-                <div class="slot" id="slot3">🍊</div>
+        <div class="game-screen" id="gameScreen">
+            <div class="user-info">
+                <div class="user-details">
+                    <span class="user-role" id="userRole"></span>
+                    <span class="user-name" id="userName"></span>
+                </div>
+                <button class="logout-btn" onclick="logout()">Выйти</button>
             </div>
 
-            <div class="message" id="message"></div>
+            <div class="admin-panel" id="adminPanel" style="display: none;">
+                <h3>👑 Панель администратора</h3>
+                
+                <div class="admin-section">
+                    <h4>Создать пользователя</h4>
+                    <div class="admin-controls">
+                        <input type="text" class="admin-input" id="newUsername" placeholder="Имя пользователя">
+                        <input type="text" class="admin-input" id="newPassword" placeholder="Пароль">
+                        <button class="admin-btn create" onclick="createUser()">➕ Создать</button>
+                    </div>
+                </div>
 
-            <div class="bet-controls">
-                <label>Ставка (USDT)</label>
-                <div class="bet-buttons">
-                    <button class="bet-button active" onclick="setBet(10)">10</button>
-                    <button class="bet-button" onclick="setBet(25)">25</button>
-                    <button class="bet-button" onclick="setBet(50)">50</button>
-                    <button class="bet-button" onclick="setBet(100)">100</button>
+                <div class="admin-section">
+                    <h4>Управление балансом</h4>
+                    <select class="user-select" id="selectedUser">
+                        <option value="">Выберите пользователя</option>
+                    </select>
+                    <div class="admin-controls">
+                        <input type="number" class="admin-input" id="adminAmount" placeholder="Сумма USDT" min="0" step="10">
+                        <button class="admin-btn add" onclick="addBalance()">➕ Добавить</button>
+                        <button class="admin-btn reset" onclick="resetUserBalance()">🗑️ Обнулить</button>
+                    </div>
+                </div>
+
+                <div class="admin-section">
+                    <h4>Список пользователей</h4>
+                    <div class="user-list" id="userList"></div>
                 </div>
             </div>
 
-            <button class="spin-button" id="spinButton" onclick="spin()">
-                🎰 КРУТИТЬ
-            </button>
-        </div>
-
-        <div class="stats">
-            <div class="stat-card win">
-                <div class="stat-label">Выиграно</div>
-                <div class="stat-value win"><span id="totalWon">0.00</span> USDT</div>
-            </div>
-            <div class="stat-card loss">
-                <div class="stat-label">Проиграно</div>
-                <div class="stat-value loss"><span id="totalLost">0.00</span> USDT</div>
-            </div>
-        </div>
-
-        <div class="history">
-            <h3>История спинов</h3>
-            <div id="historyList">
-                <div class="history-empty">Нет истории</div>
-            </div>
-        </div>
-
-        <button class="reset-button" onclick="resetBalance()">
-            💰 Пополнить баланс (виртуальный)
-        </button>
-
-        <div class="paytable">
-            <h3>Таблица выплат (множитель × ставка)</h3>
-            <div class="paytable-grid">
-                <div class="paytable-item">
-                    <span class="paytable-symbols">7️⃣ 7️⃣ 7️⃣</span>
-                    <span class="paytable-multiplier">×50</span>
-                </div>
-                <div class="paytable-item">
-                    <span class="paytable-symbols">💎 💎 💎</span>
-                    <span class="paytable-multiplier">×30</span>
-                </div>
-                <div class="paytable-item">
-                    <span class="paytable-symbols">⭐ ⭐ ⭐</span>
-                    <span class="paytable-multiplier">×20</span>
-                </div>
-                <div class="paytable-item">
-                    <span class="paytable-symbols">🍊 🍊 🍊</span>
-                    <span class="paytable-multiplier">×10</span>
-                </div>
-                <div class="paytable-item">
-                    <span class="paytable-symbols">🍒 🍒 🍒</span>
-                    <span class="paytable-multiplier">×8</span>
-                </div>
-                <div class="paytable-item">
-                    <span class="paytable-symbols">🍋 🍋 🍋</span>
-                    <span class="paytable-multiplier">×5</span>
+            <div class="wallet">
+                <div class="wallet-address" id="walletAddress"></div>
+                <div class="balance">
+                    <span id="balance">0.00</span> USDT
+                    <div class="balance-label">Баланс</div>
                 </div>
             </div>
-            <div class="paytable-note">
-                Две одинаковые: ×2 | Три одинаковые: указанный множитель
+
+            <div class="slot-machine">
+                <div class="slots">
+                    <div class="slot" id="slot1">🍋</div>
+                    <div class="slot" id="slot2">🍒</div>
+                    <div class="slot" id="slot3">🍊</div>
+                </div>
+
+                <div class="message" id="message"></div>
+
+                <div class="bet-controls">
+                    <label>Ставка (USDT)</label>
+                    <div class="bet-buttons">
+                        <button class="bet-button active" onclick="setBet(10)">10</button>
+                        <button class="bet-button" onclick="setBet(25)">25</button>
+                        <button class="bet-button" onclick="setBet(50)">50</button>
+                        <button class="bet-button" onclick="setBet(100)">100</button>
+                    </div>
+                </div>
+
+                <button class="spin-button" id="spinButton" onclick="spin()">
+                    🎰 КРУТИТЬ
+                </button>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card deposit">
+                    <div class="stat-label">Внесено</div>
+                    <div class="stat-value deposit"><span id="totalDeposit">0.00</span> USDT</div>
+                </div>
+                <div class="stat-card win">
+                    <div class="stat-label">Выиграно</div>
+                    <div class="stat-value win"><span id="totalWon">0.00</span> USDT</div>
+                </div>
+                <div class="stat-card loss">
+                    <div class="stat-label">Проиграно</div>
+                    <div class="stat-value loss"><span id="totalLost">0.00</span> USDT</div>
+                </div>
+            </div>
+
+            <div class="history">
+                <h3>История спинов</h3>
+                <div id="historyList">
+                    <div class="history-empty">Нет истории</div>
+                </div>
+            </div>
+
+            <div class="paytable">
+                <h3>Таблица выплат (множитель × ставка)</h3>
+                <div class="paytable-grid">
+                    <div class="paytable-item">
+                        <span class="paytable-symbols">7️⃣ 7️⃣ 7️⃣</span>
+                        <span class="paytable-multiplier">×50</span>
+                    </div>
+                    <div class="paytable-item">
+                        <span class="paytable-symbols">💎 💎 💎</span>
+                        <span class="paytable-multiplier">×30</span>
+                    </div>
+                    <div class="paytable-item">
+                        <span class="paytable-symbols">⭐ ⭐ ⭐</span>
+                        <span class="paytable-multiplier">×20</span>
+                    </div>
+                    <div class="paytable-item">
+                        <span class="paytable-symbols">🍊 🍊 🍊</span>
+                        <span class="paytable-multiplier">×10</span>
+                    </div>
+                    <div class="paytable-item">
+                        <span class="paytable-symbols">🍒 🍒 🍒</span>
+                        <span class="paytable-multiplier">×8</span>
+                    </div>
+                    <div class="paytable-item">
+                        <span class="paytable-symbols">🍋 🍋 🍋</span>
+                        <span class="paytable-multiplier">×5</span>
+                    </div>
+                </div>
+                <div class="paytable-note">
+                    Две одинаковые: ×2
+                </div>
+                <div class="paytable-warning">
+                    ⚠️ Шанс выигрыша ~5% | RTP (возврат игроку) настроен реалистично
+                </div>
             </div>
         </div>
     </div>
@@ -420,12 +751,23 @@
             '🍋': 5
         };
 
-        let balance = 1000;
+        const SYMBOL_WEIGHTS = {
+            '🍋': 35,
+            '🍒': 30,
+            '🍊': 20,
+            '💎': 10,
+            '⭐': 4,
+            '7️⃣': 1
+        };
+
+        // База данных пользователей
+        let users = {
+            admin: { password: 'qqAA', role: 'admin', balance: 0, totalWon: 0, totalLost: 0, totalDeposit: 0, history: [], wallet: '' }
+        };
+
+        let currentUser = null;
         let bet = 10;
         let spinning = false;
-        let totalWon = 0;
-        let totalLost = 0;
-        let history = [];
 
         function generateWallet() {
             const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -436,146 +778,169 @@
             return addr;
         }
 
-        document.getElementById('walletAddress').textContent = 'TRC20: ' + generateWallet();
+        function login(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('loginUsername').value.trim();
+            const password = document.getElementById('loginPassword').value;
+            const errorEl = document.getElementById('loginError');
 
-        function setBet(amount) {
-            if (spinning) return;
-            bet = amount;
-            document.querySelectorAll('.bet-button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-        }
-
-        function spin() {
-            if (spinning || balance < bet) {
-                showMessage('Недостаточно средств!', 'info');
+            if (!users[username]) {
+                errorEl.textContent = 'Пользователь не найден';
                 return;
             }
 
-            spinning = true;
-            balance -= bet;
-            totalLost += bet;
-            updateDisplay();
-
-            const slots = [
-                document.getElementById('slot1'),
-                document.getElementById('slot2'),
-                document.getElementById('slot3')
-            ];
-
-            slots.forEach(slot => slot.classList.add('spinning'));
-            document.getElementById('spinButton').disabled = true;
-            showMessage('', '');
-
-            let counter = 0;
-            const interval = setInterval(() => {
-                slots.forEach(slot => {
-                    slot.textContent = SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)];
-                });
-
-                counter++;
-                if (counter > 20) {
-                    clearInterval(interval);
-
-                    const result = [
-                        SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)],
-                        SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)],
-                        SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)]
-                    ];
-
-                    slots[0].textContent = result[0];
-                    slots[1].textContent = result[1];
-                    slots[2].textContent = result[2];
-
-                    slots.forEach(slot => slot.classList.remove('spinning'));
-                    checkWin(result);
-
-                    spinning = false;
-                    document.getElementById('spinButton').disabled = false;
-                }
-            }, 100);
-        }
-
-        function checkWin(result) {
-            const [first, second, third] = result;
-            let winAmount = 0;
-
-            if (first === second && second === third) {
-                winAmount = bet * SYMBOL_VALUES[first];
-                showMessage(`🎉 ВЫИГРЫШ! +${winAmount.toFixed(2)} USDT`, 'win');
-                balance += winAmount;
-                totalWon += winAmount;
-                addHistory('win', winAmount, result);
-            } else if (first === second || second === third || first === third) {
-                winAmount = bet * 2;
-                showMessage(`✨ Пара! +${winAmount.toFixed(2)} USDT`, 'win');
-                balance += winAmount;
-                totalWon += winAmount;
-                addHistory('win', winAmount, result);
-            } else {
-                showMessage('Попробуйте еще раз!', 'info');
-                addHistory('loss', bet, result);
+            if (users[username].password !== password) {
+                errorEl.textContent = 'Неверный пароль';
+                return;
             }
 
+            currentUser = username;
+            
+            // Создаем кошелек при первом входе
+            if (!users[username].wallet) {
+                users[username].wallet = generateWallet();
+            }
+
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('gameScreen').style.display = 'block';
+            
+            const roleEl = document.getElementById('userRole');
+            const nameEl = document.getElementById('userName');
+            
+            nameEl.textContent = username;
+            
+            if (users[username].role === 'admin') {
+                roleEl.textContent = '👑 Администратор';
+                roleEl.className = 'user-role admin';
+                document.getElementById('adminPanel').style.display = 'block';
+                updateUserList();
+                updateUserSelect();
+            } else {
+                roleEl.textContent = '👤 Пользователь';
+                roleEl.className = 'user-role user';
+                document.getElementById('adminPanel').style.display = 'none';
+            }
+
+            document.getElementById('walletAddress').textContent = 'TRC20: ' + users[username].wallet;
+            document.getElementById('loginUsername').value = '';
+            document.getElementById('loginPassword').value = '';
+            errorEl.textContent = '';
+            
             updateDisplay();
-        }
-
-        function showMessage(text, type) {
-            const msgEl = document.getElementById('message');
-            msgEl.textContent = text;
-            msgEl.className = 'message ' + type;
-        }
-
-        function addHistory(type, amount, result) {
-            const time = new Date().toLocaleTimeString('ru-RU');
-            history.unshift({
-                type,
-                amount,
-                result: result.join(' '),
-                time
-            });
-
-            if (history.length > 10) history.pop();
             updateHistory();
         }
 
-        function updateHistory() {
-            const historyEl = document.getElementById('historyList');
+        function logout() {
+            currentUser = null;
+            document.getElementById('loginScreen').style.display = 'block';
+            document.getElementById('gameScreen').style.display = 'none';
+        }
 
-            if (history.length === 0) {
-                historyEl.innerHTML = '<div class="history-empty">Нет истории</div>';
+        function createUser() {
+            if (users[currentUser].role !== 'admin') return;
+
+            const username = document.getElementById('newUsername').value.trim();
+            const password = document.getElementById('newPassword').value.trim();
+
+            if (!username || !password) {
+                showMessage('Заполните все поля', 'error');
                 return;
             }
 
-            historyEl.innerHTML = history.map(entry => `
-                <div class="history-item">
-                    <span>${entry.result}</span>
-                    <span style="color: rgba(255,255,255,0.6)">${entry.time}</span>
-                    <span style="color: ${entry.type === 'win' ? '#4ade80' : '#ef4444'}">
-                        ${entry.type === 'win' ? '+' : '-'}${entry.amount.toFixed(2)}
-                    </span>
+            if (users[username]) {
+                showMessage('Пользователь уже существует', 'error');
+                return;
+            }
+
+            users[username] = {
+                password: password,
+                role: 'user',
+                balance: 0,
+                totalWon: 0,
+                totalLost: 0,
+                totalDeposit: 0,
+                history: [],
+                wallet: generateWallet()
+            };
+
+            showMessage(`Пользователь ${username} создан`, 'win');
+            document.getElementById('newUsername').value = '';
+            document.getElementById('newPassword').value = '';
+            
+            updateUserList();
+            updateUserSelect();
+        }
+
+        function updateUserList() {
+            const listEl = document.getElementById('userList');
+            const userList = Object.keys(users).filter(u => users[u].role === 'user');
+
+            if (userList.length === 0) {
+                listEl.innerHTML = '<div class="history-empty">Нет пользователей</div>';
+                return;
+            }
+
+            listEl.innerHTML = userList.map(username => `
+                <div class="user-item">
+                    <div class="user-item-info">
+                        <div class="user-item-name">👤 ${username}</div>
+                        <div class="user-item-password">Пароль: ${users[username].password}</div>
+                        <div class="user-item-balance">Баланс: ${users[username].balance.toFixed(2)} USDT</div>
+                    </div>
+                    <button class="delete-btn" onclick="deleteUser('${username}')">Удалить</button>
                 </div>
             `).join('');
         }
 
-        function updateDisplay() {
-            document.getElementById('balance').textContent = balance.toFixed(2);
-            document.getElementById('totalWon').textContent = totalWon.toFixed(2);
-            document.getElementById('totalLost').textContent = totalLost.toFixed(2);
+        function updateUserSelect() {
+            const selectEl = document.getElementById('selectedUser');
+            const userList = Object.keys(users).filter(u => users[u].role === 'user');
+
+            selectEl.innerHTML = '<option value="">Выберите пользователя</option>' + 
+                userList.map(username => `<option value="${username}">${username} (${users[username].balance.toFixed(2)} USDT)</option>`).join('');
         }
 
-        function resetBalance() {
-            balance = 1000;
-            totalWon = 0;
-            totalLost = 0;
-            history = [];
-            showMessage('Баланс пополнен!', 'win');
-            updateDisplay();
-            updateHistory();
+        function deleteUser(username) {
+            if (confirm(`Удалить пользователя ${username}?`)) {
+                delete users[username];
+                showMessage(`Пользователь ${username} удален`, 'info');
+                updateUserList();
+                updateUserSelect();
+            }
         }
 
-        updateDisplay();
-    </script>
-</body>
-</html>
+        function addBalance() {
+            if (users[currentUser].role !== 'admin') return;
+
+            const selectedUser = document.getElementById('selectedUser').value;
+            const amount = parseFloat(document.getElementById('adminAmount').value);
+
+            if (!selectedUser) {
+                showMessage('Выберите пользователя', 'error');
+                return;
+            }
+
+            if (isNaN(amount) || amount <= 0) {
+                showMessage('Введите корректную сумму', 'error');
+                return;
+            }
+
+            users[selectedUser].balance += amount;
+            users[selectedUser].totalDeposit += amount;
+            
+            showMessage(`Баланс ${selectedUser} пополнен на ${amount.toFixed(2)} USDT`, 'win');
+            document.getElementById('adminAmount').value = '';
+            
+            updateUserList();
+            updateUserSelect();
+        }
+
+        function resetUserBalance() {
+            if (users[currentUser].role !== 'admin') return;
+
+            const selectedUser = document.getElementById('selectedUser').value;
+
+            if (!selectedUser) {
+                showMessage('Выберите пользователя', 'error');
+                return
