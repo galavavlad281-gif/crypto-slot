@@ -625,7 +625,7 @@
                     <h4>Создать пользователя</h4>
                     <div class="admin-controls">
                         <input type="text" class="admin-input" id="newUsername" placeholder="Имя пользователя">
-                        <input type="text" class="admin-input" id="newPassword" placeholder="Пароль">
+                        <input type="text" class="admin-input" id="newPassword" placeholder="Пароль (по умолчанию: admin)">
                         <button class="admin-btn create" onclick="createUser()">➕ Создать</button>
                     </div>
                 </div>
@@ -730,12 +730,8 @@
                         <span class="paytable-multiplier">×5</span>
                     </div>
                 </div>
-                <div class="paytable-note">
-                    Две одинаковые: ×2
-                </div>
-                <div class="paytable-warning">
-                    ⚠️ Шанс выигрыша ~5% | RTP (возврат игроку) настроен реалистично
-                </div>
+                <div class="paytable-note">Две одинаковые: ×2</div>
+                <div class="paytable-warning">⚠️ Шанс выигрыша ~5% | RTP настроен реалистично</div>
             </div>
         </div>
     </div>
@@ -760,9 +756,17 @@
             '7️⃣': 1
         };
 
-        // База данных пользователей
         let users = {
-            admin: { password: 'qqAA', role: 'admin', balance: 0, totalWon: 0, totalLost: 0, totalDeposit: 0, history: [], wallet: '' }
+            admin: {
+                password: 'qqAA',
+                role: 'admin',
+                balance: 0,
+                totalWon: 0,
+                totalLost: 0,
+                totalDeposit: 0,
+                history: [],
+                wallet: ''
+            }
         };
 
         let currentUser = null;
@@ -797,7 +801,6 @@
 
             currentUser = username;
             
-            // Создаем кошелек при первом входе
             if (!users[username].wallet) {
                 users[username].wallet = generateWallet();
             }
@@ -841,10 +844,12 @@
             if (users[currentUser].role !== 'admin') return;
 
             const username = document.getElementById('newUsername').value.trim();
-            const password = document.getElementById('newPassword').value.trim();
+            let password = document.getElementById('newPassword').value.trim();
+            
+            if (!password) password = 'admin';
 
-            if (!username || !password) {
-                showMessage('Заполните все поля', 'error');
+            if (!username) {
+                showMessage('Введите имя пользователя', 'error');
                 return;
             }
 
@@ -943,4 +948,5 @@
 
             if (!selectedUser) {
                 showMessage('Выберите пользователя', 'error');
-                return
+                return;
+            }
