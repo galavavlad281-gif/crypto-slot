@@ -756,10 +756,70 @@
             '7️⃣': 1
         };
 
+        function generateRandomPassword(length = 8) {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let pwd = '';
+            for (let i = 0; i < length; i++) {
+                pwd += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return pwd;
+        }
+
+        // Инициализация пользователей
         let users = {
             admin: {
                 password: 'qqAA',
                 role: 'admin',
+                balance: 0,
+                totalWon: 0,
+                totalLost: 0,
+                totalDeposit: 0,
+                history: [],
+                wallet: ''
+            },
+            user1: {
+                password: generateRandomPassword(),
+                role: 'user',
+                balance: 0,
+                totalWon: 0,
+                totalLost: 0,
+                totalDeposit: 0,
+                history: [],
+                wallet: ''
+            },
+            user2: {
+                password: generateRandomPassword(),
+                role: 'user',
+                balance: 0,
+                totalWon: 0,
+                totalLost: 0,
+                totalDeposit: 0,
+                history: [],
+                wallet: ''
+            },
+            user3: {
+                password: generateRandomPassword(),
+                role: 'user',
+                balance: 0,
+                totalWon: 0,
+                totalLost: 0,
+                totalDeposit: 0,
+                history: [],
+                wallet: ''
+            },
+            user4: {
+                password: generateRandomPassword(),
+                role: 'user',
+                balance: 0,
+                totalWon: 0,
+                totalLost: 0,
+                totalDeposit: 0,
+                history: [],
+                wallet: ''
+            },
+            user5: {
+                password: generateRandomPassword(),
+                role: 'user',
                 balance: 0,
                 totalWon: 0,
                 totalLost: 0,
@@ -966,7 +1026,7 @@
             }
         }
 
-        // === НОВЫЕ ФУНКЦИИ ===
+        // === ИГРОВЫЕ ФУНКЦИИ ===
 
         function setBet(amount) {
             bet = amount;
@@ -1043,11 +1103,9 @@
             const spinButton = document.getElementById('spinButton');
             spinButton.disabled = true;
 
-            // Анимация
             const slots = [document.getElementById('slot1'), document.getElementById('slot2'), document.getElementById('slot3')];
             slots.forEach(slot => slot.classList.add('spinning'));
 
-            // Симуляция вращения
             let spins = 0;
             const maxSpins = 10;
             const interval = setInterval(() => {
