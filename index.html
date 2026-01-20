@@ -950,3 +950,18 @@
                 showMessage('Выберите пользователя', 'error');
                 return;
             }
+
+            users[selectedUser].balance = 0;
+            users[selectedUser].totalWon = 0;
+            users[selectedUser].totalLost = 0;
+            users[selectedUser].totalDeposit = 0;
+            users[selectedUser].history = [];
+
+            showMessage(`Баланс и статистика ${selectedUser} сброшены`, 'info');
+            updateUserList();
+            updateUserSelect();
+            if (selectedUser === currentUser) {
+                updateDisplay();
+                updateHistory();
+            }
+        }
