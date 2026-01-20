@@ -786,7 +786,7 @@
             event.preventDefault();
             
             const username = document.getElementById('loginUsername').value.trim();
-            const password = document.getElementById('loginPassword').value;
+            const password = document.getElementById('loginPassword').value.trim(); // ← .trim() добавлен!
             const errorEl = document.getElementById('loginError');
 
             if (!users[username]) {
