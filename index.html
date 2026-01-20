@@ -786,7 +786,7 @@
             event.preventDefault();
             
             const username = document.getElementById('loginUsername').value.trim();
-            const password = document.getElementById('loginPassword').value.trim(); // ← .trim() добавлен!
+            const password = document.getElementById('loginPassword').value.trim();
             const errorEl = document.getElementById('loginError');
 
             if (!users[username]) {
@@ -965,3 +965,131 @@
                 updateHistory();
             }
         }
+
+        // === НОВЫЕ ФУНКЦИИ ===
+
+        function setBet(amount) {
+            bet = amount;
+            document.querySelectorAll('.bet-button').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function getRandomSymbol() {
+            const totalWeight = Object.values(SYMBOL_WEIGHTS).reduce((a, b) => a + b, 0);
+            let random = Math.random() * totalWeight;
+            for (const symbol of SYMBOLS) {
+                if (random < SYMBOL_WEIGHTS[symbol]) {
+                    return symbol;
+                }
+                random -= SYMBOL_WEIGHTS[symbol];
+            }
+            return SYMBOLS[0];
+        }
+
+        function calculateWin(s1, s2, s3) {
+            if (s1 === s2 && s2 === s3) {
+                return bet * SYMBOL_VALUES[s1];
+            } else if (s1 === s2 || s2 === s3 || s1 === s3) {
+                return bet * 2;
+            }
+            return 0;
+        }
+
+        function showMessage(text, type = 'info') {
+            const msg = document.getElementById('message');
+            msg.textContent = text;
+            msg.className = 'message ' + type;
+            setTimeout(() => {
+                if (msg.textContent === text) msg.textContent = '';
+            }, 3000);
+        }
+
+        function updateDisplay() {
+            const user = users[currentUser];
+            document.getElementById('balance').textContent = user.balance.toFixed(2);
+            document.getElementById('totalDeposit').textContent = user.totalDeposit.toFixed(2);
+            document.getElementById('totalWon').textContent = user.totalWon.toFixed(2);
+            document.getElementById('totalLost').textContent = user.totalLost.toFixed(2);
+        }
+
+        function updateHistory() {
+            const list = document.getElementById('historyList');
+            const user = users[currentUser];
+            if (user.history.length === 0) {
+                list.innerHTML = '<div class="history-empty">Нет истории</div>';
+                return;
+            }
+            list.innerHTML = user.history.slice().reverse().map(item => `
+                <div class="history-item">
+                    <span>${item.time}</span>
+                    <span>${item.result > 0 ? '+' : ''}${item.result.toFixed(2)} USDT</span>
+                </div>
+            `).join('');
+        }
+
+        async function spin() {
+            if (spinning) return;
+            const user = users[currentUser];
+            if (user.balance < bet) {
+                showMessage('Недостаточно средств', 'error');
+                return;
+            }
+
+            spinning = true;
+            user.balance -= bet;
+            user.totalLost += bet;
+            updateDisplay();
+
+            const spinButton = document.getElementById('spinButton');
+            spinButton.disabled = true;
+
+            // Анимация
+            const slots = [document.getElementById('slot1'), document.getElementById('slot2'), document.getElementById('slot3')];
+            slots.forEach(slot => slot.classList.add('spinning'));
+
+            // Симуляция вращения
+            let spins = 0;
+            const maxSpins = 10;
+            const interval = setInterval(() => {
+                slots.forEach(slot => {
+                    slot.textContent = getRandomSymbol();
+                });
+                spins++;
+                if (spins >= maxSpins) {
+                    clearInterval(interval);
+                    finishSpin();
+                }
+            }, 100);
+
+            function finishSpin() {
+                slots.forEach(slot => slot.classList.remove('spinning'));
+                const s1 = getRandomSymbol();
+                const s2 = getRandomSymbol();
+                const s3 = getRandomSymbol();
+                slots[0].textContent = s1;
+                slots[1].textContent = s2;
+                slots[2].textContent = s3;
+
+                const win = calculateWin(s1, s2, s3);
+                const time = new Date().toLocaleTimeString();
+
+                if (win > 0) {
+                    user.balance += win;
+                    user.totalWon += win;
+                    showMessage(`Вы выиграли ${win.toFixed(2)} USDT!`, 'win');
+                } else {
+                    showMessage('Попробуйте снова!', 'info');
+                }
+
+                user.history.push({ time, result: win - bet });
+                if (user.history.length > 10) user.history.shift();
+
+                updateDisplay();
+                updateHistory();
+                spinning = false;
+                spinButton.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
